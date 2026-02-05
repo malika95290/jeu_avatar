@@ -1,23 +1,30 @@
 import pygame
 
 class Projectile(pygame.sprite.Sprite):
+
     def __init__(self, player):
         super().__init__()
+
+        # vitesse de base du projectile
         self.velocity = 3
         self.player = player
+
+        # image de la boule de feu
         self.image = pygame.image.load("assets/projectile_fire.png")
         self.image = pygame.transform.scale(self.image, (90, 90))
         self.rect = self.image.get_rect()
         self.rect.y = player.rect.y + 10
 
+        # si le joueur regarde à droite
         if player.direction == "right":
             self.velocity = 8
             self.rect.x = player.rect.x + 100
-        else:  
+
+        # si le joueur regarde à gauche
+        else:
             self.velocity = -8
             self.rect.x = player.rect.x - 50
 
-    
     def move(self):
         self.rect.x += self.velocity
         # Vérifier la collision avec les ennemis
