@@ -20,7 +20,7 @@ class LevelManager:
             self.game.player.ground_y = 520
         elif level_number == 3:
             self.background = pygame.image.load("assets/background_fire.jpg").convert()
-            self.game.player.ground_y = 520
+            self.game.player.ground_y = 490
         elif level_number == 4:
             self.background = pygame.image.load("assets/background_sky.jpg").convert()
             self.game.player.ground_y = 480

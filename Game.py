@@ -21,6 +21,8 @@ class Game:
         self.spawn_wave(self.wave_size)
         video_path = os.path.join(os.path.dirname(__file__), "assets/Dragon_incrusté_dans_les_montagnes.mp4")
         self.menu_video = cv2.VideoCapture(video_path)
+        self.comet_sound = pygame.mixer.Sound("assets/fire.mp3")
+        self.comet_sound.set_volume(0.2)
     
     def check_collision(self, sprite, group):
         """Retourne True s'il y a une collision entre le sprite et un des éléments du groupe"""

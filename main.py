@@ -322,6 +322,7 @@ while running:
                     comet_event_active = True
                     comet_event_timer = 0
                     game.comet_spawn_timer = 0
+                    game.comet_sound.play(maxtime=10000) 
                 else:
                     state = "transition"
 
